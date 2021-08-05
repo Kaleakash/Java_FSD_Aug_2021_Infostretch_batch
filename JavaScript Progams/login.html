@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+      
+      function validate() {
+          //1st using name attribute 
+            // var name = document.getElementsByName("username")[0].value;
+            // alert("Welcome user "+name);  
+
+            //2nd using id attribute 
+            // var name = document.getElementById("uname").value;
+            // //alert("Name is "+name);
+            // document.getElementById("obj").innerHTML="Welcome user "+name
+      }
+    </script>
+</head>
+<body>
+    Name :<input type="text" name="username" id="uname"/><br/>
+    <input type="button" value="click here" onclick="validate()"/>
+    <br/>
+    <div id="obj">
+
+    </div>
+
+</body>
+</html>
