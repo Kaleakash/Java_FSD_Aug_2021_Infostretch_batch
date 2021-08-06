@@ -1,0 +1,27 @@
+<div>
+    <h2>Applicaton Page</h2>
+    <form [formGroup]="profile" (ngSubmit)="register()">
+        <label>First Name</label>
+        <input type="text" formControlName="fname"/><br/>
+        <label>Last Name</label>
+        <input type="text" formControlName="lname"/><br/>
+        <label>Gender</label>
+        <input type="radio" value="male" name="gender"/>Male
+        <input type="radio" value="female" name="gender"/>Female
+        <br/>
+        <label>Education</label>
+        <select formControlName="education">
+            <option value="BE">BE</option>
+            <option value="ME">ME</option>
+            <option value="BTec">BTec</option>
+            <option value="MTec">MTec</option>
+        </select>
+        <br/>
+            <label>City</label>
+            <input type="text" formControlName="city"><br/>
+            <label>State</label>
+            <input type="text" formControlName="state"><br/>
+        <input type="submit" value="Register"/>
+        <input type="reset" value="reset"/>
+    </form>
+</div>
