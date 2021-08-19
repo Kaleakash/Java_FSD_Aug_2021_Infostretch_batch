@@ -1,27 +1,33 @@
-class A implements Runnable{
-	@Override
-	public void run() {
-		for(int i=0;i<10;i++) {
-			System.out.println("i "+i);
-		}
+import java.io.*;
+class Employee implements Serializable{
+	int id;
+	String name;
+	float salary;
+	Employee(int id, String name, float salary) {
+		this.id = id;
+		this.name =name;
+		this.salary = salary;
 	}
-}
-class B implements Runnable{
-	@Override
-	public void run() {
-		for(int j=0;j<10;j++) {
-			System.out.println("j "+j);
-		}
+	void dis() {
+		System.out.println("Id is "+id);
+		System.out.println("Name is "+name);
+		System.out.println("Salary is "+salary);						
 	}
-
 }
 class Test {
-	public static void main(String args[]) throws Exception {
-	Runnable r1 = new A();
-	Runnable r2 = new B();
-	Thread t1 = new Thread(r1);
-	Thread t2 = new Thread(r2);
-	t1.start();
-	t2.start();		
+	public static void main(String args[])  throws Exception{
+		FileInputStream fis = new FileInputStream("emp.txt");
+		ObjectInputStream ois = new ObjectInputStream(fis);
+		Employee ee = (Employee)ois.readObject();
+		ee.dis();
+		System.out.println("Object De-Serializaton done successfully");
+
+		/*Employee emp = new Employee(100,"Raj",12000);
+		emp.dis();	
+		FileOutputStream fos = new FileOutputStream("emp.txt");
+		ObjectOutputStream oos = new ObjectOutputStream(fos);
+		oos.writeObject(emp);
+		System.out.println("Object serilization done successfully...");*/
+		
 	}
 }	
